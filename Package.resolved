@@ -1,0 +1,15 @@
+{
+  "originHash" : "68cec85fa578b67ef42bd4adb9847f9bd87742f8f057385695c41d9f5f3d5de0",
+  "pins" : [
+    {
+      "identity" : "bamwarecore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mrbam88/BamwareCore.git",
+      "state" : {
+        "revision" : "735e4b6d8c1e3ba5a89392f6f395a675de48c0c7",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
