@@ -1,20 +1,23 @@
-// ~/c/bamware/BamwareUI/Package.swift
-// swift-tools-version: 6.0
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "BamwareUI",
-    platforms: [.iOS(.v17)],
+    platforms: [.iOS(.v15)],
     products: [
-        .library(name: "BamwareUI", targets: ["BamwareUI"])
+        .library(name: "BamwareUI", targets: ["BamwareUI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/mrbam88/BamwareCore.git", from: "1.0.0")
+        .package(url: "https://github.com/mrbam88/BamwareCore.git", branch: "main"),
+        .package(url: "https://github.com/mrbam88/BamwareSettings.git", branch: "main")
     ],
     targets: [
         .target(
             name: "BamwareUI",
-            dependencies: ["BamwareCore"]
+            dependencies: [
+                "BamwareCore",
+                "BamwareSettings"
+            ]
         ),
         .testTarget(
             name: "BamwareUITests",

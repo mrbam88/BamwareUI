@@ -1,8 +1,14 @@
+import SwiftUI
+import BamwareSettings
 
-import BamwareCore
+public final class BrandingManager: ObservableObject {
+    @Published public private(set) var palette: BrandingPalette = .default
 
-public struct BrandingManager {
-    public static func brand(for tenant: Tenant) -> String {
-        return "Default Brand"  // Stub—replace later
+    public init() {}
+
+    public func update(from colorScheme: ColorScheme?) {
+        palette = colorScheme == .dark
+            ? BrandingPalette(primary: .purple, secondary: .orange, background: .black, text: .white)
+            : .default
     }
 }

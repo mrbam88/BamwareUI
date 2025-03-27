@@ -1,28 +1,22 @@
-
 import SwiftUI
-import BamwareCore
 
 public struct BrandingPalette {
-    public static func theme(for tenantID: String, isDarkMode: Bool = false) -> Theme {
-        switch tenantID {
-        case "bamSocial":
-            return Theme(
-                tenantID: tenantID,
-                primaryColor: isDarkMode ? .cyan : .blue,
-                secondaryColor: .gray,
-                backgroundColor: isDarkMode ? .black : .white,
-                font: .body,
-                isDarkMode: isDarkMode
-            )
-        default:
-            return Theme(
-                tenantID: tenantID,
-                primaryColor: .blue,
-                secondaryColor: .gray,
-                backgroundColor: .white,
-                font: .body,
-                isDarkMode: false
-            )
-        }
+    public let primary: Color
+    public let secondary: Color
+    public let background: Color
+    public let text: Color
+
+    public static let `default` = BrandingPalette(
+        primary: .blue,
+        secondary: .green,
+        background: .white,
+        text: .black
+    )
+
+    public init(primary: Color, secondary: Color, background: Color, text: Color) {
+        self.primary = primary
+        self.secondary = secondary
+        self.background = background
+        self.text = text
     }
 }

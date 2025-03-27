@@ -1,4 +1,6 @@
+import Foundation
+import BamwareSettings
 
 public protocol ThemeService {
-    func currentTheme() -> Theme
+    var currentTheme: Theme { get }
 }
